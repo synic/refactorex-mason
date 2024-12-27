@@ -2,11 +2,11 @@
 
 VERSION="0.1.28"
 
-rm -rf refactorex/
-mkdir refactorex
+rm -rf refactorex-release/
+mkdir refactorex-release
 curl -L "https://github.com/gp-pereira/refactorex/archive/refs/tags/$VERSION.tar.gz" |
-	tar zx -C refactorex --strip-components 1
-cd refactorex
+	tar zx -C refactorex-release --strip-components 1
+cd refactorex-release
 patch -p1 <../stdio.patch
 mix deps.get
 mix compile
